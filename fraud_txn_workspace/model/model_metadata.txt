@@ -1,0 +1,4 @@
+model_type: VotingClassifier
+training_date: 2025-05-16 16:21:32
+model_version: 1.0.0
+feature_count: 4

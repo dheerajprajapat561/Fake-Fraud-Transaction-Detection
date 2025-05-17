@@ -1,0 +1,17 @@
+-- Create tablespace
+CREATE TABLESPACE fraud_ts 
+DATAFILE 'C:\app\dheer\oradata\XE\fraud_ts.dbf' 
+SIZE 100M AUTOEXTEND ON NEXT 10M MAXSIZE 1G;
+
+-- Create user
+CREATE USER bank_admin IDENTIFIED BY 920400 
+DEFAULT TABLESPACE fraud_ts
+TEMPORARY TABLESPACE temp
+QUOTA UNLIMITED ON fraud_ts;
+
+-- Grant necessary privileges
+GRANTE CONNECT, RESOURCE, CREATE SESSION, CREATE TABLE, 
+CREATE SEQUENCE, CREATE VIEW, CREATE PROCEDURE TO bank_admin;
+
+-- Exit SQL*Plus
+EXIT;
